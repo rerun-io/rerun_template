@@ -65,3 +65,5 @@ ninja = "1.11.1"
 # Python stuff:
 mypy = "1.8.0"
 ruff = "0.3.7"
+
+types-requests = ">=2.31,<3" # mypy type hint stubs for generate_changelog.py

@@ -102,7 +102,7 @@ def get_commit_info(commit: Any) -> CommitInfo:
         return CommitInfo(hexsha=commit.hexsha, title=commit.summary, pr_number=None)
 
 
-def remove_prefix(text, prefix):
+def remove_prefix(text: str, prefix: str) -> str:
     if text.startswith(prefix):
         return text[len(prefix) :]
     return text  # or whatever

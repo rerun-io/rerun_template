@@ -122,7 +122,7 @@ jobs:
 
       - name: Cranky wasm32
         env:
-          CLIPPY_CONF_DIR: "ci/clippy_wasm" # Use ci/clippy_wasm/clippy.toml
+          CLIPPY_CONF_DIR: "scripts/clippy_wasm" # Use scripts/clippy_wasm/clippy.toml
         run: cargo cranky --target wasm32-unknown-unknown -- -D warnings
 
   # ---------------------------------------------------------------------------
