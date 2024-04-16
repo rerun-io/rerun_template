@@ -117,7 +117,8 @@ def update(languages: Set[str], dry_run: bool) -> None:
                     continue
                 if rel_path.startswith("src/"):
                     continue
-                if rel_path == "README.md":
+
+                if rel_path in {"README.md", "pixi.lock", "Cargo.lock"}:
                     continue
 
                 if rel_path not in files_to_ignore:
