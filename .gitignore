@@ -14,3 +14,4 @@ build
 
 # Pixi environment
 .pixi
+.ruff_cache
