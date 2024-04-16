@@ -16,4 +16,4 @@ jobs:
 
       - run: pixi run build
 
-      # TODO(emilk): Add a step to check formatting etc
+      - run: pixi run fmt-check

@@ -24,16 +24,30 @@ version = "0.1.0"
 
 
 [tasks]
+# ------------------------------------------------------------------------------------------
 # C++ stuff:
 # Note: extra CLI argument after `pixi run TASK` are passed to the task cmd.
+
+# Clean C++ build artifacts
 clean = { cmd = "rm -rf build bin CMakeFiles/" }
 print-env = { cmd = "echo $PATH" }
 prepare = "cmake -G 'Ninja' -B build -S . -DCMAKE_BUILD_TYPE=RelWithDebInfo"
+
+# Build C++ example
 build = { cmd = "cmake --build build --config RelWithDebInfo --target all", depends_on = [
     "prepare",
 ] }
+
+# Run C++ example
 example = { cmd = "build/rerun_template", depends_on = ["build"] }
-format = { cmd = "clang-format -i src/*" }
+
+# Format C++ code
+fmt = { cmd = "clang-format -i src/*" }
+
+# Check formatting of C++ code
+fmt-check = { cmd = "clang-format --dry-run --Werror -i src/*" }
+
+# ------------------------------------------------------------------------------------------
 
 [dependencies]
 # C++ build-tools:
