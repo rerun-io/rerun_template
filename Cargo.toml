@@ -1,0 +1,30 @@
+[package]
+authors = ["rerun.io <opensource@rerun.io>"]
+categories = []                                                      # TODO
+description = ""                                                     # TODO
+edition = "2021"
+homepage = "https://github.com/rerun-io/rerun_template"              # TODO
+include = ["LICENSE-APACHE", "LICENSE-MIT", "**/*.rs", "Cargo.toml"]
+keywords = []                                                        # TODO
+license = "MIT OR Apache-2.0"
+name = "rerun_template"                                              # TODO
+readme = "README.md"
+repository = "https://github.com/rerun-io/rerun_template"            # TODO
+rust-version = "1.76"
+version = "0.1.0"
+
+[package.metadata.docs.rs]
+all-features = true
+
+
+[features]
+default = []
+
+
+[dependencies]
+
+
+[dev-dependencies]
+
+
+[patch.crates-io]
