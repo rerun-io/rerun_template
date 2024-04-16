@@ -38,19 +38,10 @@ exclude_path = [
   "_deps/",
   ".pixi",
   "build",
-  "docs/python/",
-  "rerun_cpp/_deps",
-  "rerun_cpp/docs/html",
-  "rerun_cpp/docs/xml",
-  "rerun_cpp/tmp/",
-  "rerun_py/site/",
   "target_ra",
   "target_wasm",
   "target",
   "venv",
-
-  # Actually ignored files beyond .gitignore
-  "scripts/screenshot_compare/assets/templates/",
 ]
 
 # Exclude URLs and mail addresses from checking (supports regex).

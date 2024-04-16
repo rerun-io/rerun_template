@@ -51,8 +51,8 @@ fmt-check = { cmd = "clang-format --dry-run --Werror -i src/*" }
 # Python stuff:
 
 # Run first ruff fix, then ruff format, order is important see also https://twitter.com/charliermarsh/status/1717229721954799727
-py-fmt = "ruff check --fix --config rerun_py/pyproject.toml . && ruff format --config rerun_py/pyproject.toml ."
-py-fmt-check = "ruff format --check --config rerun_py/pyproject.toml"
+py-fmt = "ruff check --fix --config pyproject.toml . && ruff format --config pyproject.toml ."
+py-fmt-check = "ruff format --check --config pyproject.toml"
 py-lint = "mypy --install-types --non-interactive --no-warn-unused-ignore"
 
 [dependencies]

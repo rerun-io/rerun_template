@@ -39,10 +39,10 @@
     "cmake.generator": "Ninja", // Use Ninja, just like we do in our just/pixi command.
     "rust-analyzer.showUnlinkedFileNotification": false,
     "ruff.format.args": [
-        "--config=rerun_py/pyproject.toml"
+        "--config=pyproject.toml"
     ],
     "ruff.lint.args": [
-        "--config=rerun_py/pyproject.toml"
+        "--config=pyproject.toml"
     ],
     "prettier.requireConfig": true,
     "prettier.configPath": ".prettierrc.toml",
