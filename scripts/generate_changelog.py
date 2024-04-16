@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copied from https://github.com/rerun-io/rerun_template
 
 """
 Summarizes recent PRs based on their GitHub labels.

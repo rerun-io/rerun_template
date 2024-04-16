@@ -1,3 +1,5 @@
+# Copied from https://github.com/rerun-io/rerun_template
+
 [tool.ruff]
 lint.ignore = [
     # Missing docstring in public function - TODO(emilk): enable for SDK but not for examples

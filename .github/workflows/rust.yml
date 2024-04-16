@@ -1,3 +1,4 @@
+# Copied from https://github.com/rerun-io/rerun_template
 on: [push, pull_request]
 
 name: Rust
@@ -78,7 +79,13 @@ jobs:
           command: doc
           args: --document-private-items --no-deps --all-features
 
-      - name: Test
+      - name: Build tests
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: --all-features --no-run
+
+      - name: Run test
         uses: actions-rs/cargo@v1
         with:
           command: test
