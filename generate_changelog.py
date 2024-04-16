@@ -12,7 +12,6 @@ import multiprocessing
 import os
 import re
 import sys
-from datetime import date
 from dataclasses import dataclass
 from typing import Any, List, Optional
 
@@ -21,7 +20,7 @@ from git import Repo  # pip install GitPython
 from tqdm import tqdm
 
 OWNER = "rerun-io"
-REPO = "rerun_template" # TODO: Change this to the name of the repo
+REPO = "rerun_template"  # TODO: Change this to the name of the repo
 INCLUDE_LABELS = False  # It adds quite a bit of visual noise
 OFFICIAL_RERUN_DEVS = [
     "abey79",
@@ -49,8 +48,6 @@ class CommitInfo:
 
 
 def get_github_token() -> str:
-    import os
-
     token = os.environ.get("GH_ACCESS_TOKEN", "")
     if token != "":
         return token
@@ -59,15 +56,13 @@ def get_github_token() -> str:
     token_file = os.path.join(home_dir, ".githubtoken")
 
     try:
-        with open(token_file, "r") as f:
+        with open(token_file) as f:
             token = f.read().strip()
         return token
     except Exception:
         pass
 
-    print(
-        "ERROR: expected a GitHub token in the environment variable GH_ACCESS_TOKEN or in ~/.githubtoken"
-    )
+    print("ERROR: expected a GitHub token in the environment variable GH_ACCESS_TOKEN or in ~/.githubtoken")
     sys.exit(1)
 
 
@@ -187,6 +182,7 @@ def main() -> None:
     print()
     print_section("PRs", prs)
     print_section("Unsorted commits", unsorted_commits)
+
 
 if __name__ == "__main__":
     main()

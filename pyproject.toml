@@ -1,0 +1,38 @@
+[tool.ruff]
+lint.ignore = [
+    # Missing docstring in public function - TODO(emilk): enable for SDK but not for examples
+    "D1",
+
+    # No blank lines allowed after function docstring.
+    "D202",
+
+    # npydocstyle: http://www.pydocstyle.org/en/stable/error_codes.html
+    # numpy convention with a few additional lints
+    "D107",
+    "D203",
+    "D212",
+    "D401",
+    "D402",
+    "D415",
+    "D416",
+
+    # Ruff can't fix this error on its own (yet)
+    # Having ruff check this causes errors that prevent the code-formatting process from completing.
+    "E501",
+
+    # allow relative imports
+    "TID252",
+
+    "UP007", # We need this, or `ruff format` will convert `Union[X, Y]` to `X | Y` which break on Python 3.8
+]
+
+line-length = 120
+lint.select = [
+    "D",   # pydocstyle codes https://www.pydocstyle.org/en/latest/error_codes.html
+    "E",   # pycodestyle error codes: https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes
+    "F",   # Flake8 error codes https://flake8.pycqa.org/en/latest/user/error-codes.html
+    "I",   # Isort
+    "TID", # flake8-tidy-imports
+    "W",   # pycodestyle warning codes: https://pycodestyle.pycqa.org/en/latest/intro.html#error-codes
+    "UP",  # pyupgrade (ensures idomatic code for supported python version)
+]

@@ -2,7 +2,7 @@
 # Check for existence of labels
 # See all our labels at https://github.com/rerun-io/rerun/issues/labels
 
-name: Pull Request Labels
+name: PR Labels
 
 on:
   pull_request:
