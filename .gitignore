@@ -4,10 +4,10 @@
 # C++ build directory
 build
 
-# Rust compile target directory:
-**/target
-**/target_ra
-**/target_wasm
+# Rust compile target directories:
+target
+target_ra
+target_wasm
 
 # https://github.com/lycheeverse/lychee
 .lycheecache

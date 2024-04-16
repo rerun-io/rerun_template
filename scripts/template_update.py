@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copied from https://github.com/rerun-io/rerun_template
 
 """
 The script has two purposes.
@@ -45,7 +46,6 @@ PYTHON_FILES = {
 
 # Files requires by Rust, but not by both C++ or Python
 RUST_FILES = {
-    ".clang-format",
     ".github/workflows/rust.yml",
     "bacon.toml",
     "Cargo.lock",
