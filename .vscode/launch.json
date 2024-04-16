@@ -14,7 +14,7 @@
         },
         // Rust:
         {
-            "name": "Debug 'template'",
+            "name": "Debug 'rerun_template'",
             "type": "lldb",
             "request": "launch",
             "cargo": {
@@ -22,7 +22,7 @@
                     "build"
                 ],
                 "filter": {
-                    "name": "template",
+                    "name": "rerun_template",
                     "kind": "bin"
                 }
             },

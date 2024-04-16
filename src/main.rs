@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, template!");
+    println!("Hello, rerun_template!");
 }

@@ -21,7 +21,7 @@ from git import Repo  # pip install GitPython
 from tqdm import tqdm
 
 OWNER = "rerun-io"
-REPO = "template" # TODO: Change this to the name of the repo
+REPO = "rerun_template" # TODO: Change this to the name of the repo
 INCLUDE_LABELS = False  # It adds quite a bit of visual noise
 OFFICIAL_RERUN_DEVS = [
     "abey79",

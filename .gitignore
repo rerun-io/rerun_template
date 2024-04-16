@@ -1,6 +1,9 @@
 # Mac stuff:
 .DS_Store
 
+# C++ build directory
+build
+
 # Rust compile target directory:
 **/target
 **/target_ra
