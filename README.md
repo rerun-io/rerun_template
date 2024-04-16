@@ -23,6 +23,6 @@ This template includes
 
 
 ## How to use
-Start by clicking "Use this template" at https://github.com/rerun/template/ or follow [these instructions](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
+Start by clicking "Use this template" at https://github.com/rerun-io/template/ or follow [these instructions](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
 
 Then search for `TODO` and fill in all those places (including changing the whole contents of this `README.md`, obviously).
