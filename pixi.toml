@@ -42,10 +42,10 @@ build = { cmd = "cmake --build build --config RelWithDebInfo --target all", depe
 example = { cmd = "build/rerun_template", depends_on = ["build"] }
 
 # Format C++ code
-fmt = { cmd = "clang-format -i src/*" }
+cpp-fmt = { cmd = "clang-format -i src/*.[hc]pp" }
 
 # Check formatting of C++ code
-fmt-check = { cmd = "clang-format --dry-run --Werror -i src/*" }
+cpp-fmt-check = { cmd = "clang-format --dry-run --Werror -i src/*.[hc]pp" }
 
 # ------------------------------------------------------------------------------------------
 # Python stuff:

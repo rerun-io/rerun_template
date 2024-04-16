@@ -16,4 +16,4 @@ jobs:
 
       - run: pixi run build
 
-      - run: pixi run fmt-check
+      - run: pixi run cpp-fmt-check
