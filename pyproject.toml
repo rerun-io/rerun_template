@@ -21,6 +21,11 @@ extend-exclude = [
 ]
 
 lint.ignore = [
+    # These makes sense to ignore in example code, but for a proper library we should not ignore these.
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D103", # Missing docstring in public function
+
     # No blank lines allowed after function docstring.
     "D202",
 

@@ -123,17 +123,15 @@ def update(languages: set[str], dry_run: bool) -> None:
                     continue
                 if rel_path.startswith("src/"):
                     continue
-
-                if rel_path in IGNORE_FILES:
+                if rel_path in files_to_ignore:
                     continue
 
-                if rel_path not in files_to_ignore:
-                    dest_path = os.path.join(repo_path, rel_path)
+                dest_path = os.path.join(repo_path, rel_path)
 
-                    print(f"Updating {rel_path}…")
-                    if not dry_run:
-                        os.makedirs(os.path.dirname(dest_path), exist_ok=True)
-                        shutil.copy2(src_path, dest_path)
+                print(f"Updating {rel_path}…")
+                if not dry_run:
+                    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                    shutil.copy2(src_path, dest_path)
 
 
 def main() -> None:
