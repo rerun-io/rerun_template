@@ -14,4 +14,9 @@ target_wasm
 
 # Pixi environment
 .pixi
+
+# Python stuff:
+__pycache__
+.mypy_cache
 .ruff_cache
+venv

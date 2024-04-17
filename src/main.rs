@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, rerun_template!");
+    println!("Hello, PROJ_NAME!");
 }

@@ -21,8 +21,10 @@ extend-exclude = [
 ]
 
 lint.ignore = [
-    # Missing docstring in public function - TODO(emilk): enable for SDK but not for examples
-    "D1",
+    # These makes sense to ignore in example code, but for a proper library we should not ignore these.
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D103", # Missing docstring in public function
 
     # No blank lines allowed after function docstring.
     "D202",

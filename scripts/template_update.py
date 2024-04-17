@@ -40,9 +40,11 @@ CPP_FILES = {
 PYTHON_FILES = {
     ".github/workflows/python.yml",
     ".mypy.ini",
+    "main.py",
     "pixi.lock",  # Not needed by Rust
     "pixi.toml",  # Not needed by Rust
     "pyproject.toml",
+    "requirements.txt",
 }
 
 # Files requires by Rust, but not by both C++ or Python
@@ -104,7 +106,10 @@ def delete_files_and_folder(paths: set[str], dry_run: bool) -> None:
 
 
 def update(languages: set[str], dry_run: bool) -> None:
-    files_to_ignore = calc_deny_set(languages)
+    # Don't overwrite these
+    ALWAYS_IGNORE_FILES = {"README.md", "pixi.lock", "Cargo.lock", "main.py", "requirements.txt"}
+
+    files_to_ignore = calc_deny_set(languages) | ALWAYS_IGNORE_FILES
     repo_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -118,17 +123,15 @@ def update(languages: set[str], dry_run: bool) -> None:
                     continue
                 if rel_path.startswith("src/"):
                     continue
-
-                if rel_path in {"README.md", "pixi.lock", "Cargo.lock"}:
+                if rel_path in files_to_ignore:
                     continue
 
-                if rel_path not in files_to_ignore:
-                    dest_path = os.path.join(repo_path, rel_path)
+                dest_path = os.path.join(repo_path, rel_path)
 
-                    print(f"Updating {rel_path}…")
-                    if not dry_run:
-                        os.makedirs(os.path.dirname(dest_path), exist_ok=True)
-                        shutil.copy2(src_path, dest_path)
+                print(f"Updating {rel_path}…")
+                if not dry_run:
+                    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+                    shutil.copy2(src_path, dest_path)
 
 
 def main() -> None:
