@@ -52,7 +52,7 @@ cpp-fmt-check = { cmd = "clang-format --dry-run --Werror -i src/*.[hc]pp" }
 
 # Run first ruff fix, then ruff format, order is important see also https://twitter.com/charliermarsh/status/1717229721954799727
 py-fmt = "ruff check --fix --config pyproject.toml . && ruff format --config pyproject.toml ."
-py-fmt-check = "ruff format --check --config pyproject.toml"
+py-fmt-check = "ruff check --config pyproject.toml . && ruff format --check --config pyproject.toml"
 py-lint = "mypy --install-types --non-interactive --no-warn-unused-ignore"
 
 [dependencies]

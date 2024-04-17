@@ -14,11 +14,12 @@ In either case, make sure the list of languages matches the languages you want t
 You can also use `--dry-run` to see what would happen without actually changing anything.
 """
 
+from __future__ import annotations
+
 import argparse
 import os
 import shutil
 import tempfile
-from typing import Set
 
 from git import Repo
 
@@ -62,14 +63,14 @@ RUST_FILES = {
 }
 
 
-def parse_languages(lang_str: str) -> Set[str]:
+def parse_languages(lang_str: str) -> set[str]:
     languages = lang_str.split(",") if lang_str else []
     for lang in languages:
         assert lang in ["cpp", "python", "rust"], f"Unsupported language: {lang}"
     return set(languages)
 
 
-def calc_deny_set(languages: Set[str]) -> Set[str]:
+def calc_deny_set(languages: set[str]) -> set[str]:
     """The set of files to delete/ignore."""
     files_to_delete = CPP_FILES | PYTHON_FILES | RUST_FILES
     if "cpp" in languages:
@@ -81,13 +82,13 @@ def calc_deny_set(languages: Set[str]) -> Set[str]:
     return files_to_delete
 
 
-def init(languages: Set[str], dry_run: bool) -> None:
+def init(languages: set[str], dry_run: bool) -> None:
     print("Removing all language-specific files not needed for languages {languages}.")
     files_to_delete = calc_deny_set(languages)
     delete_files_and_folder(files_to_delete, dry_run)
 
 
-def delete_files_and_folder(paths: Set[str], dry_run: bool) -> None:
+def delete_files_and_folder(paths: set[str], dry_run: bool) -> None:
     repo_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
     for path in paths:
         full_path = os.path.join(repo_path, path)
@@ -102,7 +103,7 @@ def delete_files_and_folder(paths: Set[str], dry_run: bool) -> None:
                     shutil.rmtree(full_path)
 
 
-def update(languages: Set[str], dry_run: bool) -> None:
+def update(languages: set[str], dry_run: bool) -> None:
     files_to_ignore = calc_deny_set(languages)
     repo_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 

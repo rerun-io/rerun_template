@@ -5,7 +5,7 @@ name: C++
 
 jobs:
   python-check:
-    name: "Python check"
+    name: Python
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
