@@ -8,13 +8,15 @@ The result can be copy-pasted into CHANGELOG.md,
 though it often needs some manual editing too.
 """
 
+from __future__ import annotations
+
 import argparse
 import multiprocessing
 import os
 import re
 import sys
 from dataclasses import dataclass
-from typing import Any, List, Optional
+from typing import Any, Optional
 
 import requests
 from git import Repo  # pip install GitPython
@@ -38,7 +40,7 @@ OFFICIAL_RERUN_DEVS = [
 class PrInfo:
     gh_user_name: str
     pr_title: str
-    labels: List[str]
+    labels: list[str]
 
 
 @dataclass
@@ -57,7 +59,7 @@ def get_github_token() -> str:
     token_file = os.path.join(home_dir, ".githubtoken")
 
     try:
-        with open(token_file) as f:
+        with open(token_file, encoding="utf8") as f:
             token = f.read().strip()
         return token
     except Exception:
@@ -109,7 +111,7 @@ def remove_prefix(text: str, prefix: str) -> str:
     return text  # or whatever
 
 
-def print_section(crate: str, items: List[str]) -> None:
+def print_section(crate: str, items: list[str]) -> None:
     if 0 < len(items):
         print(f"#### {crate}")
         for line in items:
