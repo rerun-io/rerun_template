@@ -106,7 +106,10 @@ def delete_files_and_folder(paths: set[str], dry_run: bool) -> None:
 
 
 def update(languages: set[str], dry_run: bool) -> None:
-    files_to_ignore = calc_deny_set(languages)
+    # Don't overwrite these
+    ALWAYS_IGNORE_FILES = {"README.md", "pixi.lock", "Cargo.lock", "main.py", "requirements.txt"}
+
+    files_to_ignore = calc_deny_set(languages) | ALWAYS_IGNORE_FILES
     repo_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -121,7 +124,7 @@ def update(languages: set[str], dry_run: bool) -> None:
                 if rel_path.startswith("src/"):
                     continue
 
-                if rel_path in {"README.md", "pixi.lock", "Cargo.lock"}:
+                if rel_path in IGNORE_FILES:
                     continue
 
                 if rel_path not in files_to_ignore:
