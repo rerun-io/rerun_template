@@ -23,7 +23,7 @@ from git import Repo  # pip install GitPython
 from tqdm import tqdm
 
 OWNER = "rerun-io"
-REPO = "REPO_NAME"
+REPO = "new_repo_name"
 INCLUDE_LABELS = False  # It adds quite a bit of visual noise
 OFFICIAL_RERUN_DEVS = [
     "abey79",
