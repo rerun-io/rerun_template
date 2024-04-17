@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "rerun_template"
+name = "PROJECT_NAME"
 version = "0.1.0"

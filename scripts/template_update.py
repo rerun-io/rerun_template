@@ -40,9 +40,11 @@ CPP_FILES = {
 PYTHON_FILES = {
     ".github/workflows/python.yml",
     ".mypy.ini",
+    "main.py",
     "pixi.lock",  # Not needed by Rust
     "pixi.toml",  # Not needed by Rust
     "pyproject.toml",
+    "requirements.txt",
 }
 
 # Files requires by Rust, but not by both C++ or Python
