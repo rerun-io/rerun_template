@@ -1,15 +1,16 @@
 [package]
 authors = ["rerun.io <opensource@rerun.io>"]
-categories = []                                                      # TODO
-description = ""                                                     # TODO
+categories = []                                                      # TODO: fill in if you plan on publishing the crate
+description = ""                                                     # TODO: fill in if you plan on publishing the crate
 edition = "2021"
-homepage = "https://github.com/rerun-io/REPO_NAME"                   # TODO
+homepage = "https://github.com/rerun-io/REPO_NAME"
 include = ["LICENSE-APACHE", "LICENSE-MIT", "**/*.rs", "Cargo.toml"]
-keywords = []                                                        # TODO
+keywords = []                                                        # TODO: fill in if you plan on publishing the crate
 license = "MIT OR Apache-2.0"
-name = "PROJECT_NAME"                                                # TODO
+name = "PROJECT_NAME"
+publish = false                                                      # TODO: set to `true` if you plan on publishing the crate
 readme = "README.md"
-repository = "https://github.com/rerun-io/REPO_NAME"                 # TODO
+repository = "https://github.com/rerun-io/REPO_NAME"
 rust-version = "1.76"
 version = "0.1.0"
 
