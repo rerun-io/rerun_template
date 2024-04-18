@@ -21,7 +21,7 @@ import os
 import shutil
 import tempfile
 
-from git import Repo
+from git import Repo  # pip install GitPython
 
 OWNER = "rerun-io"
 
@@ -107,7 +107,14 @@ def delete_files_and_folder(paths: set[str], dry_run: bool) -> None:
 
 def update(languages: set[str], dry_run: bool) -> None:
     # Don't overwrite these
-    ALWAYS_IGNORE_FILES = {"README.md", "pixi.lock", "Cargo.lock", "main.py", "requirements.txt"}
+    ALWAYS_IGNORE_FILES = {
+        "Cargo.lock",
+        "CHANGELOG.md",
+        "main.py",
+        "pixi.lock",
+        "README.md",
+        "requirements.txt",
+    }
 
     files_to_ignore = calc_deny_set(languages) | ALWAYS_IGNORE_FILES
     repo_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
