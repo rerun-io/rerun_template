@@ -55,7 +55,6 @@ py-fmt = "ruff check --fix --config pyproject.toml . && ruff format --config pyp
 py-fmt-check = "ruff check --config pyproject.toml . && ruff format --check --config pyproject.toml"
 py-lint = "mypy --install-types --non-interactive --no-warn-unused-ignore"
 
-
 # ------------------------------------------------------------------------------------------
 # General stuff:
 lint-typos = "typos"
