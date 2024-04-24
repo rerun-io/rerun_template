@@ -29,6 +29,9 @@ default = []
 [dev-dependencies]
 
 
+[patch.crates-io]
+
+
 [lints]
 workspace = true
 
@@ -192,6 +195,3 @@ zero_sized_map_values = "warn"
 
 manual_range_contains = "allow" # this one is just worse imho
 ref_patterns = "allow"          # It's nice to avoid ref pattern, but there are some situations that are hard (impossible?) to express without.
-
-
-[patch.crates-io]
