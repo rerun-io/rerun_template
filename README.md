@@ -13,12 +13,15 @@ This template includes
 * License files
 * Code of Conduct
 * Helpers for checking and linting Rust code
-  - `cargo-cranky`
+  - `cargo-clippy`
   - `cargo-deny`
   - `rust-toolchain`
+  - …
 * CI for:
   - Spell checking
   - Link checking
+  - C++ checks
+  - Python checks
   - Rust checks
 
 
