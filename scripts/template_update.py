@@ -76,6 +76,9 @@ RUST_FILES = {
     "src/main.rs",
 }
 
+# Files we used to have, but have been removed in never version of rerun_template
+DEAD_FILES = ["bacon.toml", "Cranky.toml"]
+
 
 def parse_languages(lang_str: str) -> set[str]:
     languages = lang_str.split(",") if lang_str else []
@@ -118,6 +121,11 @@ def delete_files_and_folder(paths: set[str], dry_run: bool) -> None:
 
 
 def update(languages: set[str], dry_run: bool) -> None:
+    for file in DEAD_FILES:
+        print(f"Removing dead file {file}…")
+        if not dry_run:
+            os.remove(file)
+
     files_to_ignore = calc_deny_set(languages) | DO_NOT_OVERWRITE
     repo_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
