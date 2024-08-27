@@ -25,15 +25,6 @@ from tqdm import tqdm
 OWNER = "rerun-io"
 REPO = "new_repo_name"
 INCLUDE_LABELS = False  # It adds quite a bit of visual noise
-OFFICIAL_RERUN_DEVS = [
-    "abey79",
-    "emilk",
-    "jleibs",
-    "jprochazk",
-    "nikolausWest",
-    "teh-cmc",
-    "Wumpf",
-]
 
 
 @dataclass
@@ -169,8 +160,7 @@ def main() -> None:
 
             if pr_info is not None:
                 gh_user_name = pr_info.gh_user_name
-                if gh_user_name not in OFFICIAL_RERUN_DEVS:
-                    summary += f" (thanks [@{gh_user_name}](https://github.com/{gh_user_name})!)"
+                summary += f" by [@{gh_user_name}](https://github.com/{gh_user_name})"
 
             prs.append(summary)
 
@@ -181,7 +171,7 @@ def main() -> None:
         prs[i] = line
 
     print()
-    print(f"Full diff at https://github.com/rerun-io/{REPO}/compare/{args.commit_range}")
+    print(f"Full diff at https://github.com/{OWNER}/{REPO}/compare/{args.commit_range}")
     print()
     print_section("PRs", prs)
     print_section("Unsorted commits", unsorted_commits)
