@@ -16,6 +16,7 @@ import os
 import re
 import sys
 from dataclasses import dataclass
+from datetime import date
 from typing import Any, Optional
 
 import requests
@@ -198,6 +199,7 @@ def main() -> None:
         line = line[0].upper() + line[1:]  # Upper-case first letter
         prs[i] = line
 
+    print(f"## {args.version} - {date.today()}")
     print()
     print(f"Full diff at https://github.com/{OWNER}/{REPO}/compare/{args.commit_range}")
     print()
