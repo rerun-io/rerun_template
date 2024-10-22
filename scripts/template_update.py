@@ -68,6 +68,7 @@ RUST_FILES = {
     "clippy.toml",
     "Cranky.toml",
     "deny.toml",
+    "RELEASES.md",
     "rust-toolchain",
     "scripts/clippy_wasm/",
     "scripts/clippy_wasm/clippy.toml",
