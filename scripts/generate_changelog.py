@@ -201,7 +201,7 @@ def main() -> None:
 
     print(f"## {args.version} - {date.today()}")
     print()
-    print(f"Full diff at https://github.com/{OWNER}/{REPO}/compare/{args.commit_range}")
+    print(f"Full diff at https://github.com/{OWNER}/{REPO}/compare/{commit_range}")
     print()
     print_section("PRs", prs)
     print_section("Unsorted commits", unsorted_commits)
