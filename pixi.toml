@@ -68,10 +68,10 @@ cxx-compiler = "1.6.0.*"
 ninja = "1.11.1.*"
 
 # Python stuff:
-mypy = "1.8.0"
-ruff = "0.3.7"
+mypy = "1.14.1.*"
+ruff = "0.11.6.*"
 
-types-requests = ">=2.31,<3" # mypy type hint stubs for generate_changelog.py
+types-requests = ">=2.32,<3" # mypy type hint stubs for generate_changelog.py
 
 # General stuff:
 typos = ">=1.16.20"
