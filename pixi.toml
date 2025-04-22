@@ -34,12 +34,12 @@ print-env = { cmd = "echo $PATH" }
 prepare = "cmake -G 'Ninja' -B build -S . -DCMAKE_BUILD_TYPE=RelWithDebInfo"
 
 # Build C++ example
-build = { cmd = "cmake --build build --config RelWithDebInfo --target all", depends_on = [
+build = { cmd = "cmake --build build --config RelWithDebInfo --target all", depends-on = [
     "prepare",
 ] }
 
 # Run C++ example
-example = { cmd = "build/PROJ_NAME", depends_on = ["build"] }
+example = { cmd = "build/PROJ_NAME", depends-on = ["build"] }
 
 # Format C++ code
 cpp-fmt = { cmd = "clang-format -i src/*.[hc]pp" }
