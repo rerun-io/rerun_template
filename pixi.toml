@@ -62,8 +62,8 @@ lint-typos = "typos"
 
 [dependencies]
 # C++ build-tools:
-cmake = "3.27.6"
 clang-tools = ">=15,<16" # clang-format
+cmake = "3.27.6"
 cxx-compiler = "1.6.0.*"
 ninja = "1.11.1"
 
