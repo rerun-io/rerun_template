@@ -23,28 +23,28 @@ target_include_directories(PROJ_NAME PRIVATE src)
 
 if(MSVC)
     # TODO(andreas): Try to enable /Wall
-    target_compile_options(${TARGET_NAME} PRIVATE /W4)
+    target_compile_options(PROJ_NAME PRIVATE /W4)
 
-    target_compile_options(${TARGET_NAME} PRIVATE /we4996) # Using deprecated functions is an error
+    target_compile_options(PROJ_NAME PRIVATE /we4996) # Using deprecated functions is an error
 
     if(BUILD_SHARED_LIBS)
         # If we are building as shared libs, we are going to have to disable the C4251
         # warning, as it would trigger for any datatype derived from a STL class
         # See also https://github.com/protocolbuffers/protobuf/blob/v26.1/cmake/README.md#notes-on-compiler-warnings
         # We need also to make it public, otherwise downstream code will be flooded by c4251 warnings
-        target_compile_options(${TARGET_NAME} PUBLIC /wd4251)
+        target_compile_options(PROJ_NAME PUBLIC /wd4251)
     endif()
 
     # CMAKE_COMPILE_WARNING_AS_ERROR is only directly supported starting in CMake `3.24`
     # https://cmake.org/cmake/help/latest/prop_tgt/COMPILE_WARNING_AS_ERROR.html
     if(CMAKE_COMPILE_WARNING_AS_ERROR)
-        target_compile_options(${TARGET_NAME} PRIVATE /WX
+        target_compile_options(PROJ_NAME PRIVATE /WX
             /w15038 # Initialization order. https://learn.microsoft.com/en-us/cpp/error-messages/compiler-warnings/c5038
         )
     endif()
 else()
     # Enabled warnings.
-    target_compile_options(${TARGET_NAME} PRIVATE
+    target_compile_options(PROJ_NAME PRIVATE
         -Wall
         -Wcast-align
         -Wcast-qual
@@ -65,7 +65,7 @@ else()
 
     if(CMAKE_CXX_COMPILER_ID MATCHES "Clang") # match both "Clang" and "AppleClang"
         # TODO(emilk): enable some hardening flags from https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
-        target_compile_options(${TARGET_NAME} PRIVATE
+        target_compile_options(PROJ_NAME PRIVATE
             -Wc++17-compat-pedantic
             -Wc++20-compat-pedantic
             -Wc99-extensions
@@ -100,11 +100,11 @@ else()
     # CMAKE_COMPILE_WARNING_AS_ERROR is only directly supported starting in CMake `3.24`
     # https://cmake.org/cmake/help/latest/prop_tgt/COMPILE_WARNING_AS_ERROR.html
     if(CMAKE_COMPILE_WARNING_AS_ERROR)
-        target_compile_options(${TARGET_NAME} PRIVATE -Werror)
+        target_compile_options(PROJ_NAME PRIVATE -Werror)
     endif()
 
     if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         # Improve stack traces:
-        target_compile_options(${TARGET_NAME} PRIVATE -g -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fno-optimize-sibling-calls)
+        target_compile_options(PROJ_NAME PRIVATE -g -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fno-optimize-sibling-calls)
     endif()
 endif()
