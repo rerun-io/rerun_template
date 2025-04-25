@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16...3.27)
 
 set(CMAKE_COMPILE_WARNING_AS_ERROR ON)
 
-set(TARGET_NAME rerun_vrs_example)
+set(TARGET_NAME new_project_name)
 project(${TARGET_NAME} LANGUAGES CXX)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -13,7 +13,7 @@ endif()
 
 # Rerun:
 include(FetchContent)
-FetchContent_Declare(rerun_sdk URL https://github.com/rerun-io/rerun/releases/download/0.22.1/rerun_cpp_sdk.zip)
+FetchContent_Declare(rerun_sdk URL https://github.com/rerun-io/rerun/releases/download/0.23.0/rerun_cpp_sdk.zip)
 FetchContent_MakeAvailable(rerun_sdk)
 
 add_executable(${TARGET_NAME} src/main.cpp)
