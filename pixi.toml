@@ -39,7 +39,7 @@ build = { cmd = "cmake --build build --config RelWithDebInfo --target all", depe
 ] }
 
 # Run C++ example
-example = { cmd = "build/PROJ_NAME", depends-on = ["build"] }
+example = { cmd = "build/new_project_name", depends-on = ["build"] }
 
 # Format C++ code
 cpp-fmt = { cmd = "clang-format -i src/*.[hc]pp" }

@@ -1,5 +1,5 @@
 //! Example of a Rust binary.
 
 fn main() {
-    println!("Hello, PROJ_NAME!");
+    println!("Hello, new_project_name!");
 }
