@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [ opened, synchronize ]
 
-name: C++
+name: Python
 
 jobs:
   python-check:
