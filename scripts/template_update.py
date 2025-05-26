@@ -148,7 +148,7 @@ def update(languages: set[str], dry_run: bool) -> None:
 
                 if rel_path.startswith(".git/"):
                     continue
-                if rel_path.startswith("crates/") || rel_path.startswith("src/"):
+                if rel_path.startswith("crates/") or rel_path.startswith("src/"):
                     continue
                 if rel_path in files_to_ignore:
                     continue
