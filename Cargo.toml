@@ -1,44 +1,28 @@
-[package]
+[workspace]
+resolver = "2"
+members = [
+    "crates/new_project_name",
+]
+
+[workspace.package]
 authors = ["rerun.io <opensource@rerun.io>"]
-categories = []                                                      # TODO: fill in if you plan on publishing the crate
-description = ""                                                     # TODO: fill in if you plan on publishing the crate
 edition = "2024"
 homepage = "https://github.com/rerun-io/new_repo_name"
 include = ["LICENSE-APACHE", "LICENSE-MIT", "**/*.rs", "Cargo.toml"]
 keywords = []                                                        # TODO: fill in if you plan on publishing the crate
 license = "MIT OR Apache-2.0"
-name = "new_project_name"
-publish = false                                                      # TODO: set to `true` if you plan on publishing the crate
-readme = "README.md"
 repository = "https://github.com/rerun-io/new_repo_name"
 rust-version = "1.85"
-version = "0.1.0"
-
-[package.metadata.docs.rs]
-all-features = true
-targets = ["x86_64-unknown-linux-gnu", "wasm32-unknown-unknown"]
 
 
-[features]
-default = []
+[workspace.dependencies]
 
-
-[dependencies]
-
-
-[dev-dependencies]
 
 
 [patch.crates-io]
 
-
 # ----------------------------------------------------------------------------------------
 # Lints:
-
-
-[lints]
-workspace = true
-
 
 [workspace.lints.rust]
 unsafe_code = "deny"
