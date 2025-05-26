@@ -19,9 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions-rs/toolchain@v1
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
-          profile: default
+          components: rust-docs, clippy, rustfmt
           toolchain: 1.85.1
           override: true
 
@@ -37,9 +37,6 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.8.8
         with:
           pixi-version: v0.42.1
-
-      - name: Set up cargo cache
-        uses: Swatinem/rust-cache@v2
 
       - name: Rustfmt
         run: pixi run cargo fmt --all -- --check
@@ -78,16 +75,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions-rs/toolchain@v1
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
-          profile: minimal
           toolchain: 1.85.1
-          target: wasm32-unknown-unknown
           override: true
-          components: clippy
-
-      - name: Set up cargo cache
-        uses: Swatinem/rust-cache@v2
+          target: wasm32-unknown-unknown
+          components: clippy,rustfmt
 
       - name: Check wasm32
         uses: actions-rs/cargo@v1
