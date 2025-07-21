@@ -55,6 +55,7 @@ PYTHON_FILES = {
     "pixi.toml",  # Pixi is only C++ & Python - For Rust we only use cargo
     "pyproject.toml",
     "requirements.txt",
+    "new_project_name/__init__.py",
 }
 
 # Files required by Rust, but not by _both_ C++ and Python
