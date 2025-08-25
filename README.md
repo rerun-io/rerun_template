@@ -29,7 +29,7 @@ This template includes
 Start by clicking "Use this template" at https://github.com/rerun-io/rerun_template/ or follow [these instructions](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
 
 Then follow these steps:
-* Run `scripts/template_update.py init --languages cpp,rust,python` to delete files you don't need (give the languages you need support for)
+* Run `pixi run scripts/template_update.py init --languages cpp,rust,python` to delete files you don't need (give the languages you need support for)
 * Search and replace all instances of `new_repo_name` with the name of the repository.
 * Search and replace all instances of `new_project_name` with the name of the project (crate/binary name).
 * Search for `TODO` and fill in all those places
@@ -37,4 +37,4 @@ Then follow these steps:
 * Commit!
 
 In the future you can always update this repository with the latest changes from the template by running:
-* `scripts/template_update.py update --languages cpp,rust,python`
+* `pixi run scripts/template_update.py update --languages cpp,rust,python`
