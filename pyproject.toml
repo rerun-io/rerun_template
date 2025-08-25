@@ -3,7 +3,7 @@
 [tool.ruff]
 # https://beta.ruff.rs/docs/configuration/
 
-target-version = "py38"
+target-version = "py310"
 
 # Enable unsafe fixes to allow ruff to apply fixes that may change the behavior of the code.
 # This is needed because otherwise ruff will not be able to trim whitespaces in (codegened) docstrings.
