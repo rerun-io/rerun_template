@@ -48,14 +48,14 @@ CPP_FILES = {
 
 # Files required by Python, but not by _both_ C++ and Rust
 PYTHON_FILES = {
-    "requirements.txt",
-    "pyproject.toml",
-    "pixi.toml",  # Pixi is only C++ & Python - For Rust we only use cargo
-    "pixi.lock",  # Pixi is only C++ & Python - For Rust we only use cargo
-    "new_project_name/__init__.py",
-    "main.py",
-    ".mypy.ini",
     ".github/workflows/python.yml",
+    ".mypy.ini",
+    "main.py",
+    "new_project_name/__init__.py",
+    "pixi.lock",  # Pixi is only C++ & Python - For Rust we only use cargo
+    "pixi.toml",  # Pixi is only C++ & Python - For Rust we only use cargo
+    "pyproject.toml",
+    "requirements.txt",
 }
 
 # Files required by Rust, but not by _both_ C++ and Python

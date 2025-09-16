@@ -16,9 +16,9 @@ target_wasm
 .pixi
 
 # Python stuff:
-venv
-*.egg-info
-.ruff_cache
-.mypy_cache
-.ipynb_checkpoints/
 __pycache__
+.ipynb_checkpoints/
+.mypy_cache
+.ruff_cache
+*.egg-info
+venv
