@@ -1,5 +1,23 @@
 # Copied from https://github.com/rerun-io/rerun_template
 
+[project]
+name = "new_project_name"
+dynamic = ["version"]
+description = "A sample Rerun python project."
+authors = [{ name = "Rerun.io", email = "opensource@rerun.io" }]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+homepage = "https://rerun.io"
+repository = "https://github.com/rerun-io/rerun_template"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "new_project_name/__init__.py"
+variable = "__version__"
+
 [tool.ruff]
 # https://beta.ruff.rs/docs/configuration/
 
