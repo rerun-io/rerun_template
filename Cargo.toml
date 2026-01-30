@@ -12,7 +12,7 @@ include = ["LICENSE-APACHE", "LICENSE-MIT", "**/*.rs", "Cargo.toml"]
 keywords = []                                                        # TODO: fill in if you plan on publishing the crate
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/rerun-io/new_repo_name"
-rust-version = "1.89.0"
+rust-version = "1.90.0"
 
 
 [workspace.dependencies]
