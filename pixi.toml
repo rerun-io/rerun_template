@@ -4,7 +4,7 @@
 # Pixi is not required for rerun, but it is a convenient way to install the
 # dependencies required for this example.
 #
-# https://prefix.dev/docs/pixi/overview
+# https://pixi.sh/latest/
 #
 # Use `pixi task list` to list the available tasks,
 # and `pixi run TASK` to run it (e.g. `pixi run example`).
