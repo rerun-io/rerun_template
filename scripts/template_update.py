@@ -32,6 +32,7 @@ DO_NOT_OVERWRITE = {
     "main.py",
     "pixi.lock",
     "README.md",
+    "requirements.txt",  # Removed from template, but may contain important content in existing forks.
 }
 
 # Files required by C++, but not by _both_ Python and Rust
@@ -107,7 +108,7 @@ def init(languages: set[str], dry_run: bool) -> None:
     delete_files_and_folder(files_to_delete, dry_run)
     if languages == {"python"}:
         print(
-            "\nYou initialized a pure-Python repo.\n" \
+            "\nYou initialized a pure-Python repo.\n"
             "Consider merging pixi.toml into pyproject.toml for easier maintenance, see: "
             "https://pixi.prefix.dev/latest/python/pyproject_toml/"
         )
